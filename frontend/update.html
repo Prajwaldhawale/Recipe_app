@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Recipe</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="form-container">
+
+    <h1 class="title">
+        Update Recipe
+    </h1>
+
+    <div class="form-card">
+
+        <form
+            action="/update/{{ recipe.id }}"
+            method="post"
+        >
+
+            <label>Recipe Name</label>
+
+            <input
+                type="text"
+                name="item_name"
+                value="{{ recipe.item_name }}"
+                required
+            >
+
+            <label>Ingredients</label>
+
+            <textarea
+                name="ingredients"
+                required
+            >{{ recipe.ingredients }}</textarea>
+
+            <label>Recipe</label>
+
+            <textarea
+                name="recipe"
+                required
+            >{{ recipe.recipe }}</textarea>
+
+            <div class="actions">
+
+                <button
+                    type="submit"
+                    class="btn btn-success"
+                >
+                    Update Recipe
+                </button>
+
+                <a
+                    href="/"
+                    class="btn btn-primary"
+                >
+                    Back
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe Manager</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="top-bar">
+
+        <h1 class="title">
+            Recipe Manager
+        </h1>
+
+        <a href="/create" class="btn btn-success">
+            + New Recipe
+        </a>
+
+    </div>
+
+    {% for recipe in recipes %}
+
+    <div class="card">
+
+        <h2 class="recipe-name">
+            {{ recipe.item_name }}
+        </h2>
+
+        <p>
+            <span class="label">
+                Ingredients
+            </span>
+        </p>
+
+        <br>
+
+        <p>{{ recipe.ingredients }}</p>
+
+        <br><br>
+
+        <p>
+            <span class="label">
+                Recipe
+            </span>
+        </p>
+
+        <br>
+
+        <p>{{ recipe.recipe }}</p>
+
+        <br><br>
+
+        <a
+            href="/update/{{ recipe.id }}"
+            class="btn btn-primary"
+        >
+            Edit
+        </a>
+
+        <form
+            action="/delete/{{ recipe.id }}"
+            method="post"
+            style="display:inline;"
+        >
+            <button
+                class="btn btn-danger"
+                type="submit"
+            >
+                Delete
+            </button>
+        </form>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Recipe</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="form-container">
+
+    <h1 class="title">
+        Create Recipe
+    </h1>
+
+    <div class="form-card">
+
+        <form action="/create" method="post">
+
+            <label>Recipe Name</label>
+
+            <input
+                type="text"
+                name="item_name"
+                required
+            >
+
+            <label>Ingredients</label>
+
+            <textarea
+                name="ingredients"
+                required
+            ></textarea>
+
+            <label>Recipe</label>
+
+            <textarea
+                name="recipe"
+                required
+            ></textarea>
+
+            <div class="actions">
+
+                <button
+                    type="submit"
+                    class="btn btn-success"
+                >
+                    Save Recipe
+                </button>
+
+                <a
+                    href="/"
+                    class="btn btn-primary"
+                >
+                    Back
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
